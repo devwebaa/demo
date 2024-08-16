@@ -1,0 +1,126 @@
+/* Resetting default margin and padding for body */
+body  {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-image: url(img/banner.jpg);
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+   }
+
+.card {
+    width: 50%;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center; /* Center text inside card */
+}
+
+
+.card-image {
+    margin-top: 24%;
+    width: 75%;
+    height: 80%;
+    object-fit: cover;
+}
+
+.card-content{
+    margin: 30px 0;
+}
+
+  .button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Căn giữa nút theo chiều ngang */
+    width: 100%;
+    padding: 20px 0; /* Thêm khoảng cách trên dưới cho toàn bộ khối */
+    position: relative; /* Để sử dụng các phần tử giả */
+  }
+
+  .button-container::before, .button-container::after {
+    content: ''; /* Nội dung rỗng để tạo hiệu ứng */
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: #70bbea; /* Màu nền xanh nhạt */
+    transform: scaleX(0); /* Ban đầu thu nhỏ theo chiều ngang */
+    transition: transform 0.5s ease; /* Hiệu ứng chuyển đổi */
+  }
+
+  .button-container::before {
+    top: 0; /* Đường trên */
+  }
+
+  .button-container::after {
+    bottom: 0; /* Đường dưới */
+  }
+
+  .button-container:hover::before, .button-container:hover::after {
+    transform: scaleX(1); /* Mở rộng đường khi hover */
+  }
+
+  .login-button, .register-button {
+    padding: 15px 40px; /* Khoảng cách trên dưới và hai bên của nút */
+    font-size: 18px; /* Kích thước chữ */
+    border: 2px solid transparent; /* Bỏ đường viền mặc định */
+    border-radius: 5px; /* Bo tròn góc */
+    cursor: pointer; /* Con trỏ chuột thành bàn tay khi hover */
+    text-decoration: none; /* Bỏ gạch chân */
+    text-align: center; /* Canh giữa chữ */
+    font-family: Arial, sans-serif; /* Font chữ */
+    width: 50%; /* Chiếm 50% chiều rộng khối chứa */
+    margin-bottom: 10px; /* Khoảng cách giữa các nút */
+    transition: all 0.3s ease; /* Hiệu ứng chuyển đổi chung */
+  }
+
+  /* Nút Đăng Nhập */
+  .login-button {
+    background-color: #70bbea; /* Màu nền xanh */
+    color: #FFFFFF; /* Màu chữ trắng */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Đổ bóng */
+  }
+
+  .login-button:hover {
+    background-color: #4CAF50; /* Màu nền khi hover */
+    transform: translateY(-3px); /* Di chuyển lên trên khi hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Tăng đổ bóng khi hover */
+  }
+
+  /* Nút Đăng Ký */
+  .register-button {
+    background-color: #FFFFFF; /* Màu nền trắng */
+    color: #70bbea; /* Màu chữ xanh */
+    border: 2px solid #70bbea; /* Viền xanh */
+  }
+
+  .register-button:hover {
+    background-color: #70bbea; /* Màu nền khi hover */
+    color: #FFFFFF; /* Màu chữ khi hover */
+    transform: translateY(-3px); /* Di chuyển lên trên khi hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Tăng đổ bóng khi hover */
+  }
+
+  @media screen and (max-width: 760px){
+    .card{
+        width: 100%;
+    }
+    .card-image{
+        width: 85%;
+        margin: 0;
+    }
+  }
